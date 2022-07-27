@@ -1,0 +1,32 @@
+        .button-navbar {
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+        }
+
+        .nav-options-container{
+            display: flex;
+            height: 50px;
+            width: 400px;
+            
+        }
+
+        .about-container{
+            display: flex;
+            align-items: center;
+            padding-left: 84px;
+        }
+
+        .about-product{ 
+            margin-top: 10px;
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-color:#0156FF ;
+        }
+
+       
+        
+         
+        
+
+    

@@ -1,0 +1,52 @@
+.increment-decrement-button{
+    height: 40px;
+    width: 60px;
+    border-radius: 5px;
+    background-color: #F5F7FF;
+    margin: 5px 10px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.counter-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 40px !important;
+    margin: 0px;
+    max-width: 50%;
+    padding:0px ;
+    
+
+}
+
+.counter-sec-row{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.inc-dec-btn-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2px;
+    margin: 0px;
+    width: 50%;
+    height: 40px !important;
+}

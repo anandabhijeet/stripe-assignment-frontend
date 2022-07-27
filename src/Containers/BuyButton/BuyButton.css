@@ -1,0 +1,40 @@
+.buy-button{
+    width: 120px;
+    height: 40px;
+    background-color: #0156FF;
+    border-radius: 30px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 2.5px;
+}
+
+.buy-button:hover{
+    background-color: #0156ffe7;
+    border: 1px solid #0156FF;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.buy-button p{
+    margin: 0px;
+    cursor: pointer;
+
+}
+.quant{
+    background-color: rgb(165, 162, 162);
+}
+
+.loader {
+    border: 3px solid #f3f3f3; /* Light grey */
+    border-top: 3px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
