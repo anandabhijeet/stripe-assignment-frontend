@@ -1,31 +1,69 @@
   import React, { useEffect } from "react";
-
   import BlackNavBar from "./Containers/BlackNavbar/BlackNavBar";
   import Navbar from "./Containers/Navbar/Navbar";
   import ButtonContainer from "./Containers/ButtonContainer/ButtonContainer";
   import { useDispatch, useSelector } from "react-redux/es/exports";
   // import Swiper core and required modules
   import { Pagination, Autoplay} from 'swiper';
-
   import { Swiper, SwiperSlide } from 'swiper/react';
 
   // Import Swiper styles
   import 'swiper/css';
   import 'swiper/css/autoplay'
   import 'swiper/css/pagination';
-  import 'swiper/css/effect-fade';
+
+  import Swal from "sweetalert2";
+  import withReactContent from "sweetalert2-react-content";
   import "./App.css";
   import { getProduct } from "./Redux/Action";
 import BottomAppBar from "./Containers/BottomAppBar/BottomAppBar";
 
   const App = () => {
     const productData = useSelector((state) => state.gettingProduct[0]);
-   
+    
+    const MySwal = withReactContent(Swal);
+
+      const handleSuccess =()=>{
+        console.log("success")
+        MySwal.fire({
+          icon:"success",
+          title:'Payment was successful',
+          timer:4000,
+        })
+      }
+      const handlefailure =()=>{
+        MySwal.fire({
+          icon:"error",
+          title:'Payment failed',
+          timer:4000,
+        })
+      }
+    
+    const location_url = window.location.href;
+
+    const checkQueryParams = () => {
+      
+      
+      const url_array = location_url.split("/");
+      console.log(url_array[3]);
+
+      if(url_array[3] === "stripepaymentsuccess"){
+        handleSuccess();
+      }
+
+      if(url_array[3] === "stripepaymentcancel"){
+        handlefailure();
+      }
+    }
 
     const dispatch = useDispatch();
     useEffect(() => {
       dispatch(getProduct());
     }, [dispatch]);
+    
+    useEffect(()=>{
+       checkQueryParams();
+    },[location_url])
 
     return (
       <div className="App">

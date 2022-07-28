@@ -1,8 +1,7 @@
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import { actionTypes } from "./ActionTypes";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+
 
 export const getProduct = () => async(dispatch)=>{
     const response = await axios.get("http://localhost:5000/getProduct");
@@ -16,23 +15,7 @@ export const getProduct = () => async(dispatch)=>{
 }
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-const MySwal = withReactContent(Swal);
 
-const handleSuccess =()=>{
-  console.log("success")
-  MySwal.fire({
-    icon:"success",
-    title:'Payment was successful',
-    timer:4000,
-  })
-}
-const handlefailure =()=>{
-  MySwal.fire({
-    icon:"error",
-    title:'Payment failed',
-    timer:4000,
-  })
-}
 export const handleClick= (product) => async (dispatch) => {
     // console.log("handle click", product);
    
@@ -54,7 +37,7 @@ export const handleClick= (product) => async (dispatch) => {
 
       if (result.error) {
         console.log("redirectToCheckout Fails", result.error);
-        dispatch(handlefailure())
+        
       }
       console.log(result);
     } catch (error) {

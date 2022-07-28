@@ -10,14 +10,15 @@
 
 .discription-section{
     background-color:#F5F7FF;
-    min-height: 77vh;
+    min-height: 68vh;
     display: flex;
     justify-content: flex-end;
     padding: 0px;
+    
 }
 
 .discription-section-container{
-    min-height: 77vh;
+    min-height: 68vh;
     width: 80%;
     margin: 0px;
     display: flex;
