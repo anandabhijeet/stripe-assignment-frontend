@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux/es/exports";
 // import Swiper core and required modules
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -41,9 +40,10 @@ const App = () => {
 
   const location_url = window.location.href;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const checkQueryParams = () => {
     const url_array = location_url.split("/");
-    console.log(url_array[3]);
+    
 
     if (url_array[3] === "stripepaymentsuccess") {
       handleSuccess();
@@ -61,7 +61,7 @@ const App = () => {
 
   useEffect(() => {
     checkQueryParams();
-  }, [location_url]);
+  }, [checkQueryParams, location_url]);
 
   return (
     <div className="App">
